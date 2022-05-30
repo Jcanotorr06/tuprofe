@@ -1,0 +1,120 @@
+export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
+  head: {
+    title: 'tuprofe',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [
+  ],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+    '@nuxtjs/composition-api/module',
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode',
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
+    '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
+  ],
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/',
+  },
+
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  pwa: {
+    manifest: {
+      lang: 'es',
+    },
+  },
+
+  colorMode: {
+    preference: 'light',
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '-mode',
+    storageKey: 'nuxt-color-mode'
+  },
+
+  tailwindcss: {
+    jit: true,
+    exposeConfig: true
+  },
+
+  // i18n modul configuration: https://i18n.nuxtjs.org
+  i18n: {
+    locales: [
+      {
+        code: 'es',
+        iso: 'es',
+        file:'es.js'
+      },
+      {
+        code: 'en',
+        iso: 'en',
+        file: 'en.js'
+      }
+    ],
+    langDir: 'lang/',
+    defaultLocale: 'es',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',  // recommended
+    },
+    vueI18n: {
+      fallbackLocale: 'es',
+      messages: {
+
+      }
+    }
+  },
+
+  googleFonts:{
+    families: {
+      'Josefin+Sans': [400, 500, 600],
+      Rubik: [700,800,900]
+    },
+    display: 'swap',
+    download: true,
+    inject: true,
+    subsets: 'latin'
+  },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+}

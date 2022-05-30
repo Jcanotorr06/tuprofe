@@ -1,0 +1,19 @@
+$primaryColor: #F4CBD3;
+$black: #000000;
+$light-gray: #F5F5F5;
+$white: #FFFFFF;
+
+:root{
+    --primary-color: #F4CBD3;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: $light-gray;
+}
+
+nav{
+    background-color: $white;
+}
+
