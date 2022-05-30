@@ -4,16 +4,16 @@ export const useModeStore = defineStore({
     id: 'mode-store',
     state: () => ({
         mode: 'sun',
-        backgroundColor: '#F5F5F5',
+        dark: false,
     }),
     actions: {
         swap() {
             if(this.mode === 'sun'){
                 this.mode = 'moon'
-                this.backgroundColor = '#040D19'
+                this.dark = true
             }else{
                 this.mode = 'sun'
-                this.backgroundColor = '#F5F5F5'
+                this.dark = false
             }
         }
     },
@@ -21,11 +21,8 @@ export const useModeStore = defineStore({
         getMode(state){
             return state.mode
         },
-        getBackgroundColor(state){
-            if(state.mode === 'light'){
-                return '#777777'
-            }
-            return '#222222'
+        getDark(state){
+            return state.dark
         }
     }
 })

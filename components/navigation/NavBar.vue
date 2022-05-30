@@ -9,7 +9,7 @@
                 <button class="" @click="modalStore.open('login')">{{$t ('login')}}</button>
             </div>
             <div class="">
-                <button :icon="`pi pi-${modeStore.mode}`" class="" @click="modeStore.swap()" />
+                <button class="" @click="modeStore.swap()">{{modeStore.mode}}</button>
             </div>
         </div>
     </nav>

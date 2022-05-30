@@ -16,6 +16,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/tailwind.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -35,6 +36,7 @@ export default {
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -45,6 +47,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
+    '@nuxt/postcss8',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
