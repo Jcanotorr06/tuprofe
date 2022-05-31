@@ -20,7 +20,9 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/bootstrapVue.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,6 +39,7 @@ export default {
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/postcss8',
+    'bootstrap-vue/nuxt'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,6 +51,7 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     '@nuxt/postcss8',
+    'bootstrap-vue/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -76,6 +80,12 @@ export default {
   tailwindcss: {
     jit: true,
     exposeConfig: true
+  },
+
+  bootstrapVue: {
+    icons: true,
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
   },
 
   // i18n modul configuration: https://i18n.nuxtjs.org
