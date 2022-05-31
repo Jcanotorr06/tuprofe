@@ -1,10 +1,8 @@
 <template>
-    <body class="bg-gray-200 dark:bg-gray-700">
     <main>
         <NavigationNavBar/>
         <Nuxt/>
     </main>
-    </body>
 </template>
 
 <script>
