@@ -1,7 +1,7 @@
 <template>
     <nav class="flex flex-grow drop-shadow w-screen py-3 px-4 justify-between items-center flex-wrap">
         <nuxt-link to="/">
-            <nuxt-img src="/logo_texto.svg" height="40" width="140"/>
+            <nuxt-img :src="modeStore.dark ? '/logo_texto_dark.svg' : '/logo_texto.svg'" height="40" width="140"/>
         </nuxt-link>
         <div class="flex gap-3">
             <div class="hidden md:flex gap-x-2">
