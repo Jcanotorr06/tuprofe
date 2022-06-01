@@ -14,6 +14,12 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL
+  },
+  privateRuntimeConfig: {
+    API_KEY: process.env.API_KEY
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/tailwind.css'
@@ -37,7 +43,6 @@ export default {
     '@nuxt/image',
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     '@nuxt/postcss8',
     'bootstrap-vue/nuxt'
   ],
@@ -49,7 +54,6 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/i18n',
-    '@nuxtjs/color-mode',
     '@nuxt/postcss8',
     'bootstrap-vue/nuxt'
   ],
@@ -65,16 +69,6 @@ export default {
     manifest: {
       lang: 'es',
     },
-  },
-
-  colorMode: {
-    preference: 'light',
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '-mode',
-    storageKey: 'nuxt-color-mode'
   },
 
   tailwindcss: {
@@ -94,14 +88,17 @@ export default {
       {
         code: 'es',
         iso: 'es',
-        file:'es.js'
+        file: 'es.js',
+        name: "ES"
       },
       {
         code: 'en',
         iso: 'en',
-        file: 'en.js'
+        file: 'en.js',
+        name: "EN"
       }
     ],
+    strategy: 'no_prefix',
     langDir: 'lang/',
     defaultLocale: 'es',
     detectBrowserLanguage: {
@@ -110,7 +107,7 @@ export default {
       redirectOn: 'root',  // recommended
     },
     vueI18n: {
-      fallbackLocale: 'es',
+      fallbackLocale: false,
       messages: {
 
       }
