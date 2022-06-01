@@ -55,7 +55,11 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/i18n',
     '@nuxt/postcss8',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    ['nuxt-supabase', {
+      supabaseUrl: process.env.API_URL,
+      supabaseKey: process.env.API_KEY
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
