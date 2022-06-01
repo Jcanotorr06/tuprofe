@@ -106,12 +106,14 @@
       background-color: var(--surface-ground);
   }
 
-  nav {
+  nav, .surface {
       background-color: var(--surface-overlay);
   }
 
   button {
       transition: var(--button-transition);
+      cursor: pointer;
+      user-select: none;
   }
 
   h1,h2,h3,h4,h5,h6 {

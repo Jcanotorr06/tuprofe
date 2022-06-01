@@ -9,7 +9,13 @@
                 <button class="button-primary font-semibold rounded-full px-7 py-2" @click="modalStore.open('login')">{{$t ('login')}}</button>
             </div>
             <div class="flex items-center">
-                <button class="button-text-primary flex justify-center items-center rounded-full p-2 text-lg  hover:scale-110 transition-transform duration-150 ease-in-out" @click="modeStore.swap()"><b-icon :icon="modeStore.dark ? 'moon-stars-fill' : 'brightness-high-fill'"/></button>
+                <TranslationSelector/>
+            </div>
+            <div class="flex items-center">
+                <button class="button-text-primary flex justify-center items-center rounded-full p-2 text-lg  hover:scale-110 transition-transform duration-150 ease-in-out" @click="modeStore.swap()">
+                    <b-icon v-if="modeStore.dark" icon="moon-stars-fill"/>
+                    <b-icon v-else icon="brightness-high-fill"/>
+                </button>
             </div>
         </div>
     </nav>
