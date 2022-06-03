@@ -5,8 +5,8 @@
         </nuxt-link>
         <div class="flex gap-3">
             <div class="hidden md:flex gap-x-2">
-                <button class="button-text-primary font-semibold rounded-full px-7 py-2" @click="modalStore.open('signup')">{{$t ('signup')}}</button>
-                <button class="button-primary font-semibold rounded-full px-7 py-2" @click="modalStore.open('login')">{{$t ('login')}}</button>
+                <button v-if="userStore.user" class="button-primary font-semibold rounded-full px-7 py-2" @click="logOut">{{$t ('logout')}}</button>
+                <button v-else class="button-primary font-semibold rounded-full px-7 py-2" @click="modalStore.open('login')">{{$t ('login')}}</button>
             </div>
             <div class="flex items-center">
                 <TranslationSelector/>
@@ -24,12 +24,35 @@
 <script>
     import { useModeStore } from "~/store/mode";
     import { useModalStore } from "~/store/modal";
+    import { useUserStore } from "~~/store/user";
     export default {
         data() {
             return {
                 modeStore: useModeStore(),
-                modalStore: useModalStore()
+                modalStore: useModalStore(),
+                userStore: useUserStore(),
             }
-        }
+        },
+        methods: {
+            test(){
+                let x  = localStorage.getItem('loginDate')
+                console.log(document.cookie)
+                if(x){
+                    console.log(this.$supabase.auth.currentUser)
+                    this.userStore.setUser(this.$supabase.auth.currentUser)
+                }else{
+                    console.log('FUCK')
+                }
+            },
+            async logOut(){
+                const res = await this.$supabase.auth.signOut()
+                if(!res.error){
+                    this.userStore.clearUser()
+                }
+            }
+        },
+        mounted() {
+            this.test()
+        },
     }
 </script>

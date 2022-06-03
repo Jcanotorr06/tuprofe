@@ -2,6 +2,10 @@ import Vue from "vue"
 import { BootstrapVueIcons } from "bootstrap-vue"
 import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 
-export default () => {
+/* export default () => {
     Vue.use(BootstrapVueIcons)
-}
+} */
+
+export default defineNuxtPlugin(nuxtApp => {
+    nuxtApp.vueApp.use(BootstrapVueIcons)
+})

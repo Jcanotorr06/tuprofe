@@ -110,6 +110,11 @@
       background-color: var(--surface-overlay);
   }
 
+  .overlay {
+      background-color: var(--surface-800);
+      opacity: 50%;
+  }
+
   button {
       transition: var(--button-transition);
       cursor: pointer;
@@ -156,6 +161,12 @@
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
 
+  button.button-disabled {
+      opacity: 0.6;
+      cursor: default !important;
+      pointer-events: none;
+  }
+
   .grow-1 {
       flex-grow: 1;
   }
@@ -170,4 +181,31 @@
   }
   .grow-5 {
       flex-grow: 5;
+  }
+
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  input[type=email] {
+    font-size: 1rem;
+    color: #495057;
+    background: var(--surface-ground);
+    padding: 0.75rem 0.75rem;
+    border: 1px solid var(--surface-hover);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    border-radius: 6px;
+  }
+  input[type=email]:enabled:hover {
+    border-color: var(--primary-color);
+  }
+  input[type=email]:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #C7D2FE;
+    border-color: var(--primary-color);
   }

@@ -1,6 +1,6 @@
 <template>
     <div>
-       <span>TEST.</span>
+       <nuxt-link to="/">Home</nuxt-link>
        <p>{{facultades}}</p>
     </div>
 </template>

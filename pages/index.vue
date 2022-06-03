@@ -1,6 +1,6 @@
 <template>
   <div class="p-5">
-    <div class="surface w-100 rounded-lg relative">
+    <div class="surface w-100 rounded-lg">
       <div class="w-100 surface shadow-lg rounded-lg px-32 py-5 flex justify-between items-center flex-wrap">
           <div class="flex h-100 items-center grow">
               <div class="bg-gray-400 flex justify-center items-center p-3 rounded-lg text-white">
@@ -38,7 +38,9 @@
           </div>
       </div>
       <div>
-        <div class="h-96"></div>
+        <div class="h-96">
+          <nuxt-link to="/test">Test</nuxt-link>
+        </div>
       </div>
     </div>
   </div>
