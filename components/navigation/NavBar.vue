@@ -34,16 +34,6 @@
             }
         },
         methods: {
-            test(){
-                let x  = localStorage.getItem('loginDate')
-                console.log(document.cookie)
-                if(x){
-                    console.log(this.$supabase.auth.currentUser)
-                    this.userStore.setUser(this.$supabase.auth.currentUser)
-                }else{
-                    console.log('FUCK')
-                }
-            },
             async logOut(){
                 const res = await this.$supabase.auth.signOut()
                 if(!res.error){
@@ -51,8 +41,13 @@
                 }
             }
         },
-        mounted() {
-            this.test()
-        },
+        async fetch() {
+            if(!this.userStore.user && this.$supabase.auth.currentUser){
+                this.userStore.setUser(this.$supabase.auth.currentUser)
+                console.log('USER SET')
+            }else{
+                console.log('ALREADY LOGGED IN')
+            }
+        }
     }
 </script>

@@ -39,7 +39,6 @@
                 console.log(res)
                 if(!res.error){
                     let date = new Date()
-                    localStorage.setItem("loginDate", date.getTime())
                 }
             }
         },

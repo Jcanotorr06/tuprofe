@@ -125,8 +125,19 @@
       color: var(--surface-900);
   }
 
-  p, a, span, small {
+  p, span, small {
       color: var(--text-color);
+  }
+
+  a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      cursor: pointer;
+  }
+  a:hover{
+      text-decoration: underline;
+      color: var(--primary-focused)
   }
 
   button:focus {
@@ -190,7 +201,7 @@
     transform: translate(-50%, -50%);
   }
 
-  input[type=email] {
+  input {
     font-size: 1rem;
     color: #495057;
     background: var(--surface-ground);
@@ -200,10 +211,10 @@
     appearance: none;
     border-radius: 6px;
   }
-  input[type=email]:enabled:hover {
+  input:enabled:hover {
     border-color: var(--primary-color);
   }
-  input[type=email]:enabled:focus {
+  input:enabled:focus {
     outline: 0 none;
     outline-offset: 0;
     box-shadow: 0 0 0 0.2rem #C7D2FE;
