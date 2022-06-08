@@ -39,15 +39,26 @@
                 if(!res.error){
                     this.userStore.clearUser()
                 }
+            },
+            setUser() {
+                if(!this.userStore.user && this.$supabase.auth.currentUser){
+                    this.userStore.setUser(this.$supabase.auth.currentUser)
+                    console.log('USER SET')
+                }else{
+                    console.log('ALREADY LOGGED IN')
+                }
             }
         },
-        async fetch() {
+        mounted() {
+            this.setUser()
+        }
+       /*  async fetch() {
             if(!this.userStore.user && this.$supabase.auth.currentUser){
                 this.userStore.setUser(this.$supabase.auth.currentUser)
                 console.log('USER SET')
             }else{
                 console.log('ALREADY LOGGED IN')
             }
-        }
+        } */
     }
 </script>
