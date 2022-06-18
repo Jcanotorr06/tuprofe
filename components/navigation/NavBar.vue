@@ -40,17 +40,30 @@
                     this.userStore.clearUser()
                 }
             },
-            setUser() {
-                if(!this.userStore.user && this.$supabase.auth.currentUser){
-                    this.userStore.setUser(this.$supabase.auth.currentUser)
-                    console.log('USER SET')
+            async setUser() {
+                if(!this.userStore.user){
+                    if(this.$supabase.auth.currentUser) {
+                        this.userStore.setUser(this.$supabase.auth.currentUser)
+                        let {ip} = await fetch("https://www.myexternalip.com/json").then(res => res.json())
+                        const up = await this.$supabase.auth.update({
+                            data: {
+                                ipAddress: ip
+                            }
+                        })
+                        console.log('LOGGIN IN')
+                    }else{
+                        console.log('NOT LOGGED IN')
+                    }
                 }else{
                     console.log('ALREADY LOGGED IN')
                 }
             }
         },
         mounted() {
-            this.setUser()
+            setTimeout(() => {
+                this.setUser()
+
+            }, 200)
         }
        /*  async fetch() {
             if(!this.userStore.user && this.$supabase.auth.currentUser){
